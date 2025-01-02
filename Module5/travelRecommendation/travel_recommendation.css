@@ -1,6 +1,6 @@
   /* Define a variable for the color value */
   :root {
-    --text-color: #0a419f;
+    --text-color: white;
   }
 
 body {
@@ -18,6 +18,9 @@ body {
   color: white;
 }
 
+.home-container {
+  margin-top: 200px;
+}
 .main-content {
   display: flex;
 }
@@ -42,9 +45,8 @@ body {
   width: 20px; 
 }
 .content {
-  margin-top: 200px;
   margin-left: 50px;
-  width: 500px;
+  width: 100%;
 }
 
 .logo {
@@ -91,4 +93,19 @@ body {
 .clear-button {
   background-color: #e74c3c;
   color: white;
+}
+
+.aboutUs-container {
+  margin-top: 100px;
+}
+
+.contacts-container {
+  display: flex;
+  flex-direction: row;
+  margin-left: 40px;
+}
+
+.contact-content{
+  margin-left: 15px;
+  margin-right: 15px;;
 }
