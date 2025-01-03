@@ -59,6 +59,5 @@ function home() {
 
     content.innerHTML = contactUs_content;
   }
-
-
+  
   home();
