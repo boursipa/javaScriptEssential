@@ -1,4 +1,7 @@
 let content = document.getElementById("content");
+let searchButton = document.getElementById("search-button");
+let clearButton = document.getElementById("clear-button");
+
 
 function home() {
     let home_content = `
@@ -59,5 +62,40 @@ function home() {
 
     content.innerHTML = contactUs_content;
   }
+
+  function searchCondition() {
+    // const input = document.getElementById('conditionInput').value.toLowerCase();
+    // const resultDiv = document.getElementById('result');
+    // resultDiv.innerHTML = '';
+    console.log('searchCondition called');
+    
+    fetch('travel_recommendation_api.json') 
+      .then(response => response.json())
+      .then(data => {
+        console.log('data :',data);
+        // const condition = data.conditions.find(item => item.name.toLowerCase() === input);
+
+        // if (condition) {
+        //   const symptoms = condition.symptoms.join(', ');
+        //   const prevention = condition.prevention.join(', ');
+        //   const treatment = condition.treatment;
+
+        //   resultDiv.innerHTML += `<h2>${condition.name}</h2>`;
+        //   resultDiv.innerHTML += `<img src="${condition.imagesrc}" alt="hjh">`;
+
+        //   resultDiv.innerHTML += `<p><strong>Symptoms:</strong> ${symptoms}</p>`;
+        //   resultDiv.innerHTML += `<p><strong>Prevention:</strong> ${prevention}</p>`;
+        //   resultDiv.innerHTML += `<p><strong>Treatment:</strong> ${treatment}</p>`;
+        // } else {
+        //   resultDiv.innerHTML = 'Condition not found.';
+        // }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        // resultDiv.innerHTML = 'An error occurred while fetching data.';
+      });
+  }
   
+  searchButton.addEventListener('click', searchCondition);
+
   home();

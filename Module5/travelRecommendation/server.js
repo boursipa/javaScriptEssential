@@ -17,6 +17,9 @@ app.get('/travel_recommendation.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'travel_recommendation.html'));
 });
 
+app.get('/travel_recommendation.json', (req, res) => {
+  res.sendFile(path.join(__dirname, 'travel_recommendation.json'));
+});
 // app.get('/travel_recommendation.html', (req, res) => {
 //   res.sendFile(__dirname + '/travel_recommendation.html');
 // });
