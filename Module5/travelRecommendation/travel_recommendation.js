@@ -3,9 +3,9 @@ let content = document.getElementById("content");
 function home() {
     let home_content = `
          <div class="home-container">
-                  <h1>Welcome to Travel PAT</h1>
-                  <p>TravelBloom is your ultimate travel guide, offering you the best destinations and experiences. Whether you're planning a trip or simply looking for inspiration, we've got you covered.</p>
-                  <button class="book-now-button">BOOK NOW</button>
+                  <h1>EXPLORE DREAM DESTINATION</h1>
+                  <p>Travel Pat is your ultimate travel guide, offering you the best destinations and experiences. Whether you're planning a trip or simply looking for inspiration, we've got you covered.</p>
+                  <button class="button">BOOK NOW</button>
                   </div>
     `;
     content.innerHTML = home_content;
@@ -34,7 +34,7 @@ function home() {
     <div class="contact-content">
     <p><b>${name}</b></p>
     <p>${description}</p>
-    <p><button class="job-title-button">${jobTitle}</button></p>
+    <p class="job-title">${jobTitle}</p>
     </div>
     `;
 
@@ -43,7 +43,19 @@ function home() {
 
   function contactUs() {
     let contactUs_content = `
-                  <h1>Contact Us</h1>     `;
+    <div class="contactUs-container">
+                  <h1 style="margin-top:100px">Contact Us</h1>
+                  <div style="width:300px; height:300px; margin-left:50px">
+            <p>Name</p>
+            <input class="radius5" style="width: 100%;" type="text" placeholder="Enter your name">
+            <p>Email</p>
+            <input class="radius5" style="width: 100%;" type="email" placeholder="Enter your email">
+            <p>Message</p>
+            <input class="radius5" style="width: 100%; height: 100px;text-align: start;" type="text" placeholder="Enter a message">
+            <button class="button" class="radius" style="width: 100%;margin-top:20px;">Submit</button>
+            </div>
+        </div> 
+        </div>    `;
 
 
     content.innerHTML = contactUs_content;
