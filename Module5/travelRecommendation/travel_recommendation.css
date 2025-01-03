@@ -1,6 +1,6 @@
   /* Define a variable for the color value */
   :root {
-    --text-color: black;
+    --text-color: white;
   }
 
 body {
@@ -29,7 +29,7 @@ body {
 .social-media {
   text-align: center;
   height: 400px;
-  width: 100px;
+  margin-left: 40px;
 }
 
 .vertical_line {
@@ -42,8 +42,8 @@ body {
 }
 
 .icon-social-media {
-  width: 20px;
-  width: 20px; 
+  width: 30px;
+  height: 30px;
 }
 .content {
   margin-left: 50px;
@@ -111,9 +111,10 @@ body {
   
 }
 .transparency{
-background-color: rgba(229,246,251,0.5);
+  background-color: rgba(90, 132, 145, 0.8);
   max-width: 80%;
   padding: 20px;
+  border-radius: 10px;
 }
 .contacts-container {
   display: flex;
