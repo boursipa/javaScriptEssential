@@ -1,7 +1,7 @@
 let content = document.getElementById("content");
+let searchResult = document.getElementById("searchResult");
 let searchButton = document.getElementById("search-button");
 let clearButton = document.getElementById("clear-button");
-
 
 function home() {
     let home_content = `
@@ -67,6 +67,7 @@ function home() {
     // const input = document.getElementById('conditionInput').value.toLowerCase();
     // const resultDiv = document.getElementById('result');
     // resultDiv.innerHTML = '';
+    searchResult.innerHTML = '';
     console.log('searchCondition called');
     
     fetch('travel_recommendation_api.json') 
@@ -89,11 +90,13 @@ function home() {
         // } else {
         //   resultDiv.innerHTML = 'Condition not found.';
         // }
+        searchResult.innerHTML=  `<p><strong>Symptoms:</strong> ${data}</p>`;
       })
       .catch(error => {
         console.error('Error:', error);
-        // resultDiv.innerHTML = 'An error occurred while fetching data.';
+        searchResult.innerHTML = 'An error occurred while fetching data.';
       });
+      searchResult.innerHTML = 'fsdjdhbdvbdhbdjd'
   }
   
   searchButton.addEventListener('click', searchCondition);
