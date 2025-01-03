@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="travel_recommendation.css">
 </head>
 
-<!-- <body style="background-image: url('travel_image.png'); background-size: cover;"> -->
+<!-- <body style="background-image: url('travel_image.png'); background-size: auto;"> -->
     <body>
     <header>
     <nav class="navbar">
@@ -28,7 +28,12 @@
       </nav>
     </header>
     <main>
-        <div class="main-content">
+        <div class="main-content" style="width: 100%; 
+        aspect-ratio: 1.7;
+        background-image: url('travel_image.png'); 
+        background-position: center; /* Center the image horizontally and vertically */ 
+        background-size: cover;">
+            <!-- Rest of your HTML content here -->
             <div class="social-media">
                 <ul><a href="#"> <hr class="vertical_line"></a></ul>
                 <ul><a href="#"> <img src="facebook_icon.png" class="icon-social-media"></a></ul>
@@ -38,9 +43,7 @@
             <div class="content" id="content">
                 <!-- Show the content here -->       
             </div>
-            
         </div>
-        
     </main>
     
   </div>

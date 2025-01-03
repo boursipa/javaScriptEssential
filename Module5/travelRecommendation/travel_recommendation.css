@@ -1,6 +1,6 @@
   /* Define a variable for the color value */
   :root {
-    --text-color: white;
+    --text-color: black;
   }
 
 body {
@@ -101,12 +101,20 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 .contactUs-container{
   display: flex;
   flex-direction: row;
-  margin-top: 100px;
+  margin-top: 100px;  
+  width: max-content;
+  height: auto;
+  
 }
-
+.transparency{
+background-color: rgba(229,246,251,0.5);
+  max-width: 80%;
+  padding: 20px;
+}
 .contacts-container {
   display: flex;
   flex-direction: row;
