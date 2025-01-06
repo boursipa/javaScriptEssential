@@ -114,7 +114,6 @@ body {
   background-color: rgba(90, 132, 145, 0.8);
   max-width: 80%;
   padding: 20px;
-  border-radius: 10px;
 }
 .contacts-container {
   display: flex;

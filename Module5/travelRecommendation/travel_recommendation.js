@@ -106,7 +106,7 @@ console.log('data.countries :', country.cities );
   data.forEach(item => {
       let countryContent = `
         <div class="transparency country-container">
-          <h1>${item.name}</h1>
+          <h2>${item.name}</h2>
           <img src="${item.imageUrl}" alt="Country Image" style="max-width:100%; max-height:150px; display:block; margin:auto;">
           <p>${item.description}</p>
         </div>
