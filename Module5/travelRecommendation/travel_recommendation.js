@@ -2,6 +2,7 @@ let content = document.getElementById("content");
 let searchResult = document.getElementById("searchResult");
 let searchButton = document.getElementById("search-button");
 let clearButton = document.getElementById("clear-button");
+let searchText = document.getElementById("searchText");
 
 function home() {
     let home_content = `
@@ -64,41 +65,63 @@ function home() {
   }
 
   function searchCondition() {
-    // const input = document.getElementById('conditionInput').value.toLowerCase();
-    // const resultDiv = document.getElementById('result');
-    // resultDiv.innerHTML = '';
+    
+    const input = searchText.value.toLowerCase();
     searchResult.innerHTML = '';
+
     console.log('searchCondition called');
     
     fetch('travel_recommendation_api.json') 
       .then(response => response.json())
       .then(data => {
         console.log('data :',data);
-        // const condition = data.conditions.find(item => item.name.toLowerCase() === input);
 
-        // if (condition) {
-        //   const symptoms = condition.symptoms.join(', ');
-        //   const prevention = condition.prevention.join(', ');
-        //   const treatment = condition.treatment;
+      switch(input) {
+          case 'beach': { searchResult.innerHTML += showResult(data.beaches);
+          break; }
+          case 'country': { data.countries.forEach(country => { 
+console.log('country :',country.name);
+console.log('data.countries :', country.cities );
 
-        //   resultDiv.innerHTML += `<h2>${condition.name}</h2>`;
-        //   resultDiv.innerHTML += `<img src="${condition.imagesrc}" alt="hjh">`;
-
-        //   resultDiv.innerHTML += `<p><strong>Symptoms:</strong> ${symptoms}</p>`;
-        //   resultDiv.innerHTML += `<p><strong>Prevention:</strong> ${prevention}</p>`;
-        //   resultDiv.innerHTML += `<p><strong>Treatment:</strong> ${treatment}</p>`;
-        // } else {
-        //   resultDiv.innerHTML = 'Condition not found.';
-        // }
-        searchResult.innerHTML=  `<p><strong>Symptoms:</strong> ${data}</p>`;
+            searchResult.innerHTML += showResult(country.cities ); 
+          });
+          break; }
+          case 'temple': { 
+  
+            searchResult.innerHTML += showResult(data.temples);
+          break; }
+        
+          default: {searchResult.innerHTML += '<div class="transparency"><h1>No result</h1></div>'}
+      }
       })
       .catch(error => {
         console.error('Error:', error);
         searchResult.innerHTML = 'An error occurred while fetching data.';
       });
-      searchResult.innerHTML = 'fsdjdhbdvbdhbdjd'
+      
   }
+
+  function showResult(data) {
+    let resultDiv = ''
+  data.forEach(item => {
+      let countryContent = `
+        <div class="transparency country-container">
+          <h1>${item.name}</h1>
+          <img src="${item.imageUrl}" alt="Country Image" style="max-width:100%; max-height:150px; display:block; margin:auto;">
+          <p>${item.description}</p>
+        </div>
+      `;
+      resultDiv += countryContent;
+  });
+  return resultDiv;
+
+}
   
   searchButton.addEventListener('click', searchCondition);
+
+  clearButton.addEventListener('click', () => {
+    searchResult.innerHTML = '';
+    searchText.value='';
+  });
 
   home();

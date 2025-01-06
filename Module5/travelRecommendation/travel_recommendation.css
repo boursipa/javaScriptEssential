@@ -123,6 +123,11 @@ body {
   margin-top: 50px;
 }
 
+.searchResult {
+  padding: 10px;
+  width: 600px;
+}
+
 .contact-content{
   margin-left: 15px;
   margin-right: 15px;;
